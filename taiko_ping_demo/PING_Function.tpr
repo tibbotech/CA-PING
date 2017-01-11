@@ -1,0 +1,27 @@
+[project]
+version=1
+platform=em1000
+src_lib_ver=2_00_04
+name=PING_Function
+output=PING_Function.tpc
+debug=on
+defines=/dLCD_TYPE=SAMSUNG_S6B0108 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_FD=FD_ENABLED /dOBJECT_KP=KP_ENABLED 
+transport=udp_broadcast
+[address1]
+platform=em1000
+transport=udp_broadcast
+address=0.127.0.0.3.61
+[file1]
+path=main.tbs
+type=basic
+format=
+condition=
+locked=no
+location=
+[file2]
+path=global.tbh
+type=header
+format=
+condition=
+locked=no
+location=

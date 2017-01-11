@@ -1,0 +1,4 @@
+
+const ping_sock = 15	'this is the socket number used for PING command, you should change this according to your own project needs, the range is 0~15
+
+declare function ping(remote_ip as string(15), remote_port as word) as no_yes

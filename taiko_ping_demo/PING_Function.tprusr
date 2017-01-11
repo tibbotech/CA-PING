@@ -1,0 +1,14 @@
+[project]
+watch=
+[file1]
+line=18
+cursor=22
+opened=active
+bookmarks=
+breakpoints=17
+[file2]
+line=0
+cursor=152
+opened=yes
+bookmarks=
+breakpoints=

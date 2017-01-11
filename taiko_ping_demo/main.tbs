@@ -1,0 +1,39 @@
+include "global.tbh"
+
+'=============================================================================
+sub on_sys_init
+
+	'PING Socket setup, no need to assign buffer as no real data exchange is necessary
+	
+	sock.num = ping_sock
+	sock.protocol = PL_SOCK_PROTOCOL_UDP
+	sock.inconmode = PL_SOCK_INCONMODE_NONE
+	sock.reconmode = PL_SOCK_RECONMODE_0
+	
+	'example on how to issue the PING
+	dim x as no_yes
+	x = ping("192.168.1.52",1000)
+	
+end sub
+
+
+'-----------------------------------------------------------------------------
+function ping(remote_ip as string(15), remote_port as word) as no_yes
+	sock.num = ping_sock
+	sock.targetip = remote_ip
+	sock.targetport = remote_port
+	sock.connect
+
+r1:
+	select case sock.state 
+	case PL_SST_CL_DISCARDED_ARPFL
+		ping = no
+		exit function
+	case PL_SST_EST_AOPENED
+		ping = yes
+		sock.close
+		exit function
+	end select
+goto r1
+
+end function
