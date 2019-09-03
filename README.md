@@ -1,5 +1,8 @@
-# CA-PING
+# Host Check (ping)
 
-To download the most recent project without installing GIT, please press the green "Clone or Download" button and select "Download ZIP".
+This function is useful for checking whether or not a host is available on the network. This is not necessarily the same device with which your application eventually tries to communicate; for example, perhaps you just want to verify that a certain router along the way is alive. Or perhaps you want your application to scan several IP addresses and issue an alert if any of them drops off the network.
 
-For more detail about this project, please visit <a href="http://tibbo.com/programmable/applications/examples/hostcheck-ping.html" target="_blank">Project Description Page</a>
+For those kind of situations, we have created the "ping" function. We called it "ping" for conveniece, not because it's actually ICMP-compliant PING (it's not).
+
+With this function, you are able to write something like **HostExist = ping("192.168.0.5",80)** and HostExist would be set "yes" if there's a host on the other end and its port 80 is responding to connection requests (and "no" otherwise). Simple!
+
